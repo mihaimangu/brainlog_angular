@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html ng-app="random">
+<head>
+    <title>Example Domain</title>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+    
+    <script src="./js/app/app.module.js" ></script>
+    <script src="./js/app/app.config.js" ></script>
+    
+
+    <script src="./js/app/items/items.module.js" ></script>
+    <script src="./js/app/items/items.component.js" ></script>
+
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+    }
+    .wrapper {
+        width: 600px;
+        margin: 5em auto;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 1em;
+    }
+        p{
+            display: block;
+            font-size: 18px;
+            font-size: {{fsize}}px;
+        }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        body {
+            background-color: #fff;
+        }
+        div {
+            width: auto;
+            margin: 0 auto;
+            border-radius: 0;
+            padding: 1em;
+        }
+    }
+    </style>    
+</head>
+
+<body>
+<div class="wrapper">
+    <h1>Example App</h1>
+    
+  
+    
+     <div class="" ng-controller="ItemsController">
+        {{title}}
+        <div>
+            <button ng-click='someClickTest()'>Click me!</button>
+        </div>
+        
+    </div>
+   
+</div>
+</body>
+</html>
