@@ -1,3 +1,8 @@
 'use strict';
 
-angular.module('random', ['items']);
+angular.module('random', [
+    //external
+   'ngRoute',
+
+   //internal
+    'items']);

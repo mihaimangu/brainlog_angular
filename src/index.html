@@ -6,6 +6,8 @@
 
    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
     
     <script src="./js/app/app.module.js" ></script>
     <script src="./js/app/app.config.js" ></script>
@@ -60,15 +62,8 @@
 <div class="wrapper">
     <h1>Example App</h1>
     
-  
-    
-     <div class="" ng-controller="ItemsController">
-        {{title}}
-        <div>
-            <button ng-click='someClickTest()'>Click me!</button>
-        </div>
-        
-    </div>
+    <items-list></items-list>
+
    
 </div>
 </body>
