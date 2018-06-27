@@ -4,29 +4,33 @@ angular.module('items')
     .component('itemsList', {
         ///template: "",
         templateUrl: 'js/app/templates/items-list.html',
-        controller: function($scope){   
-            var items = [
-                {rating: 3, 'date': 1529447101},
-                {rating: 5, 'date': 1529447101},
-                {rating: 4, 'date': 1529447101},
+        controller: function($http, $scope){   
+//            var items = [
+//                {rating: 3, 'date': 1529447101},
+//                {rating: 5, 'date': 1529447101},
+//                {rating: 4, 'date': 1529447101},
+//                
+//            ]
+            var items = [];
+            
+            $http.get("http://localhost/brain_log/api/logs").then(successCallback, errorCallback);
+            
+            function successCallback(response, status, conf){
                 
-            ]
+                var items = response.data;
+                
+                angular.forEach(items, function(item){
+                    item.computedDate = new Date(item.time * 1000);                
+                })
+                
+                $scope.items = items;
+                console.log(items);
+            }
+            
+            function errorCallback(data){
+                
+            }
             
             $scope.items = items;
-            
-            $scope.title ='Hi There';
-            $scope.click = 0;
-
-            $scope.someClickTest = function(){
-                $scope.title = 'Am schimbat titlul';
-                $scope.click ++;
-                console.log($scope.click);
-
-                if($scope.click > 0){
-                    $scope.title = 'Hi there ('+$scope.click+')';
-                }
-            };
-            
         }
     })
-    //.component('items');

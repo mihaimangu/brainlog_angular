@@ -2,7 +2,7 @@
 
 angular.module('random', [
     //external
-   'ngRoute',
+   'ui.router',
 
    //internal
     'items']);
